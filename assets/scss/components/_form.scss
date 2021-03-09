@@ -1,0 +1,72 @@
+.form-group-default {
+  position: relative;
+  margin-bottom: $spacer * 1.2;
+
+  &.is-invalid label {
+    color: $form-feedback-invalid-color !important;
+  }
+
+  label {
+    position: absolute;
+    top: calc((38px - 16px) / 2);
+    left: $input-padding-x;
+    font-weight: $input-font-weight;
+    line-height: 1;
+    margin: 0;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
+    background-color: $white;
+    cursor: text;
+    color: $gray-600;
+    @include font-size($input-font-size);
+
+    &.focused {
+      transform: translateY(calc(((-38px - 16px) / 2) + 50% + 1px));
+      font-size: 14px;
+      left: 1px;
+      padding: 0 calc(0.75rem - 1px);
+    }
+  }
+
+  .form-control {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      box-shadow: 0 0 0 30px $white inset !important;
+      -webkit-box-shadow: 0 0 0 30px $white inset !important;
+      background-color: $white !important;
+    }
+  }
+
+  &.form-group-default-lg {
+    label {
+      top: calc((48px - 16px) / 2);
+      left: 1rem;
+      @include font-size($input-font-size-lg);
+
+      &.focused {
+        left: calc(1rem - 0.75rem + 1px);
+        transform: translateY(calc(((-48px - 16px) / 2) + 50% + 1px));
+      }
+    }
+  }
+
+  &.form-group-default-sm {
+    label {
+      top: calc((31px - 16px) / 2);
+      left: 0.5rem;
+      @include font-size($input-font-size-sm);
+
+      &.focused {
+        font-size: 12px;
+        left: calc(0.5rem - 0.75rem + 1px);
+        transform: translateY(calc(((-31px - 16px) / 2) + 50% + 1px));
+      }
+    }
+  }
+}
+
+.form-control,
+.form-control:focus {
+  box-shadow: none !important;
+}
